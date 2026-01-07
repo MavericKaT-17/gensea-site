@@ -1,0 +1,23 @@
+{
+  "name": "stem-startup",
+  "version": "1.0.0",
+  "description": "STEM Education Startup Website",
+  "main": "src/script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "aos": "^2.3.4",
+    "gsap": "^3.11.4",
+    "lottie-web": "^5.10.2",
+    "particles.js": "^2.0.0",
+    "swiper": "^9.3.2",
+    "typed.js": "^2.0.12"
+  },
+  "devDependencies": {
+    "vite": "^4.4.0"
+  }
+}
