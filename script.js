@@ -1,83 +1,96 @@
-// Initialize AOS from CDN (already loaded in HTML)
-if (typeof AOS !== 'undefined') {
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
-}
-
-// Mobile Menu Toggle
+// Gallery Functionality for About Section
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    // Initialize gallery if it exists on the page
+    initGallery();
     
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+    function initGallery() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.gallery-arrow-left');
+        const nextBtn = document.querySelector('.gallery-arrow-right');
+        
+        if (galleryItems.length === 0) return; // No gallery on this page
+        
+        let currentSlide = 0;
+        
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Hide all slides
+            galleryItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            galleryItems[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= galleryItems.length) {
+                nextIndex = 0;
+            }
+            showSlide(nextIndex);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) {
+                prevIndex = galleryItems.length - 1;
+            }
+            showSlide(prevIndex);
+        }
+        
+        // Add click events to arrows
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto-rotate slides every 5 seconds (optional)
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-rotation on hover
+        const galleryView = document.querySelector('.gallery-view');
+        if (galleryView) {
+            galleryView.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            galleryView.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
             }
         });
+        
+        // Initialize first slide
+        showSlide(0);
     }
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.nav-container')) {
-            navMenu.classList.remove('active');
-            if (menuToggle) {
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (navMenu) navMenu.classList.remove('active');
-                if (menuToggle) {
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-                
-                // Smooth scroll
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Navbar scroll effect
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-            }
-        }
-    });
-    
-    console.log('genSEA Education website loaded successfully!');
 });

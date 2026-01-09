@@ -3,321 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>genSEA Education - Inspiring Ownership Through Education</title>
+    <title>genSEA Education | Inspiring Ownership Through Education</title>
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <!-- Our CSS -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="navbar">
         <div class="container nav-container">
+            <!-- Logo / Brand -->
             <a href="#" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-water"></i>
-                </div>
-                <span>gen<span class="logo-sea">SEA</span></span>
+                <!-- Option 1: Text Logo -->
+                <span class="logo-text">gen<span class="logo-sea">SEA</span></span>
+                
+                <!-- Option 2: Image Logo (uncomment when ready) -->
+                <!-- <img src="assets/images/logo.png" alt="genSEA Logo" class="logo-img"> -->
             </a>
             
-            <div class="nav-menu">
-                <a href="#" class="nav-link active">About Us</a>
+            <!-- Main Navigation Menu -->
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">About Us</a>
                 <a href="#" class="nav-link">Our Work</a>
                 <a href="#" class="nav-link">Contact Us</a>
                 <a href="#" class="nav-link">Your Participation</a>
-            </div>
+            </nav>
             
-            <div class="nav-icons">
-                <a href="#" class="nav-icon" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="nav-icon" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="nav-icon" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="nav-icon" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <!-- Optional: Social Icons & Language (Version 2) -->
+            <div class="nav-actions">
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <!-- Language Selector -->
                 <div class="language-selector">
-                    <button class="nav-icon language-btn" title="Language">
+                    <button class="language-btn" aria-label="Select language">
                         <i class="fas fa-globe"></i>
-                        <span class="language-text">EN</span>
+                        <span class="language-code">EN</span>
                     </button>
-                    <div class="language-dropdown">
-                        <a href="#" class="language-option">English</a>
-                        <a href="#" class="language-option">中文</a>
-                        <a href="#" class="language-option">Bahasa</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                <h1 class="hero-title">
-                    Inspiring <span class="highlight">Ownership</span> Through Education.
-                </h1>
-                <p class="hero-subtitle">
-                    Transforming ecological research into hands-on learning experiences that create lasting impact.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#programmes" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">
-                        Explore Programmes
-                    </a>
-                    <a href="#contact" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="300">
-                        Contact Us
-                    </a>
                 </div>
             </div>
             
-            <div class="hero-image" data-aos="fade-left" data-aos-duration="1200">
-                <div class="image-placeholder">
-                    <!-- You'll add your hero image here -->
-                    <div class="placeholder-content">
-                        <i class="fas fa-water"></i>
-                        <p>Ocean Education Hero Image</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        
-        <!-- Wave Decoration -->
-        <div class="wave">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
+    </header>
 
-    <!-- Latest Activities -->
-    <section class="activities">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Latest Activities</h2>
-                <p class="section-subtitle">Recent hands-on learning experiences</p>
+    <!-- Main Content Area -->
+    <main>
+        <!-- We'll add content in the next steps -->
+        <section class="hero container" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Navigation Bar Complete! ✅</h1>
+                <p style="font-size: 1.2rem; color: #666;">Next, we'll build the hero section.</p>
             </div>
-            
-            <div class="activities-grid">
-                <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="activity-header">
-                        <h3 class="activity-title">Night Walk</h3>
-                        <span class="activity-badge">New</span>
-                    </div>
-                    <ul class="activity-list">
-                        <li><i class="fas fa-microscope"></i> MicroLab</li>
-                        <li><i class="fas fa-water"></i> Snorkeling</li>
-                        <li><i class="fas fa-water"></i> Snorkeling</li>
-                        <li><i class="fas fa-water"></i> Snorkeling</li>
-                    </ul>
-                </div>
-                
-                <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="activity-header">
-                        <h3 class="activity-title">Night Walk</h3>
-                        <span class="activity-badge">Popular</span>
-                    </div>
-                    <ul class="activity-list">
-                        <li><i class="fas fa-microscope"></i> MicroLab</li>
-                        <li><i class="fas fa-water"></i> Snorkeling</li>
-                        <li><i class="fas fa-water"></i> Snorkeling</li>
-                    </ul>
-                </div>
-                
-                <div class="activity-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="activity-header">
-                        <h3 class="activity-title">Coming Soon</h3>
-                        <span class="activity-badge">Upcoming</span>
-                    </div>
-                    <ul class="activity-list">
-                        <li><i class="fas fa-seedling"></i> Eco Lab</li>
-                        <li><i class="fas fa-fish"></i> Marine Biology</li>
-                        <li><i class="fas fa-cloud"></i> Climate Study</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content" data-aos="fade-up">
-                <p class="about-text">
-                    Founded by a team of passionate ecologists, educators, and creatives, 
-                    <span class="highlight-text">genSEA Education</span> transforms cutting-edge 
-                    environmental and ecological research into inspiring, hands-on learning experiences.
-                </p>
-                <a href="#" class="btn btn-outline" data-aos="fade-up" data-aos-delay="200">
-                    About Us <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programmes Section -->
-    <section class="programmes" id="programmes">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Our Programmes</h2>
-                <p class="section-subtitle">
-                    Rooted in research and creativity, genSEA transforms classrooms into immersive 
-                    journeys—sparking ripples of learning and sustainability.
-                </p>
-            </div>
-            
-            <div class="programmes-grid">
-                <div class="programme-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="programme-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="programme-title">Ocean MicroLab</h3>
-                    <p class="programme-subtitle">Sonic Shadow</p>
-                    <p class="programme-description">
-                        Explore microscopic marine life through hands-on laboratory experiences.
-                    </p>
-                </div>
-                
-                <div class="programme-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="programme-icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3 class="programme-title">Snorkeling Adventure</h3>
-                    <p class="programme-subtitle">Reef Explorer</p>
-                    <p class="programme-description">
-                        Discover underwater ecosystems through guided snorkeling experiences.
-                    </p>
-                </div>
-                
-                <div class="programme-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="programme-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3 class="programme-title">Eco Research</h3>
-                    <p class="programme-subtitle">Forest Lab</p>
-                    <p class="programme-description">
-                        Field-based research programmes in various ecological environments.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="programmes-cta" data-aos="fade-up" data-aos-delay="400">
-                <p class="cta-text">
-                    genSEA offers immersive, research-driven education programmes. Learn from our educators, 
-                    explore science through hands-on activities, and build true ownership of sustainability. 
-                    Contact us to design your tailor-made journey!
-                </p>
-                <a href="#contact" class="btn btn-primary">
-                    Contact Us <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ripples Section -->
-    <section class="ripples">
-        <div class="container">
-            <div class="ripples-content" data-aos="zoom-in">
-                <div class="ripples-title">
-                    <span class="leaf">🍀</span>
-                    <span class="leaf">🍀</span>
-                    <h2>Where Ripples Begin</h2>
-                    <span class="leaf">🍀</span>
-                    <span class="leaf">🍀</span>
-                </div>
-                <p class="ripples-text">
-                    Every learning experience creates ripples of change, inspiring a new generation 
-                    of environmental stewards.
-                </p>
-            </div>
-        </div>
-        
-        <!-- Animated ripple circles -->
-        <div class="ripple-animation">
-            <div class="ripple-circle"></div>
-            <div class="ripple-circle"></div>
-            <div class="ripple-circle"></div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <span>gen<span class="logo-sea">SEA</span> Education</span>
-                    </a>
-                    <p class="footer-text">
-                        Transforming ecological research into inspiring learning experiences.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Programmes</h4>
-                        <a href="#">Ocean MicroLab</a>
-                        <a href="#">Snorkeling</a>
-                        <a href="#">Eco Research</a>
-                        <a href="#">Custom Programmes</a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>About</h4>
-                        <a href="#">Our Story</a>
-                        <a href="#">Team</a>
-                        <a href="#">Research</a>
-                        <a href="#">Impact</a>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>Connect</h4>
-                        <a href="#">Contact Us</a>
-                        <a href="#">Partnerships</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Newsletter</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 genSEA Education. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <!-- JavaScript Files -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
